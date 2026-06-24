@@ -41,6 +41,14 @@
     flex-wrap: wrap;
   }
 
+  .greeting-contact {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .greeting-text {
     font-family: 'Playfair Display', serif;
     font-size: 20px;
@@ -67,6 +75,11 @@
   }
 
   .tiktok-link:hover { color: white; }
+
+  .contact-link {
+    color: white;
+    font-weight: 500;
+  }
 
   .tiktok-icon {
     width: 15px;
@@ -545,6 +558,8 @@
     .greeting-strip { padding: 16px 18px; gap: 12px; }
     .greeting-text { width: 100%; font-size: 19px; }
     .greeting-divider { display: none; }
+    .greeting-contact { width: 100%; gap: 8px 14px; }
+    .tiktok-link { font-size: 11px; }
     .hero { padding: 34px 22px 30px; }
     .hero::after { display: none; }
     .hero-title { font-size: 36px; }
@@ -555,8 +570,30 @@
     .dfyd-strip { align-items: flex-start; flex-direction: column; gap: 8px; }
     .block, .dfyd-strip, .footer { padding-left: 22px; padding-right: 22px; }
     .brand-stats { grid-template-columns: 1fr 1fr; }
-    .tab-nav { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 1px; }
-    .tab-btn { font-size: 11px; padding: 10px 12px; flex: 0 0 auto; }
+    .tab-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      border-bottom: none;
+      margin-top: 24px;
+    }
+    .tab-btn {
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--black);
+      font-size: 11px;
+      line-height: 1.25;
+      min-height: 46px;
+      margin-bottom: 0;
+      padding: 10px 8px;
+      text-align: center;
+      white-space: normal;
+    }
+    .tab-btn.active {
+      background: var(--red);
+      border-color: var(--red);
+      color: var(--white);
+    }
     .product-layout { grid-template-columns: 1fr; gap: 24px; padding-top: 26px; }
     .product-img-wrap { width: min(100%, 280px); max-width: 280px; margin: 0 auto; }
     .shop-btn { min-height: 48px; }
@@ -571,14 +608,18 @@
 <div class="greeting-strip">
   <span class="greeting-text">I'm so happy we met.</span>
   <div class="greeting-divider"></div>
-  <a class="tiktok-link" href="https://www.tiktok.com/@werenotreallystrangers" target="_blank">
-    <svg class="tiktok-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
-    @werenotreallystrangers
-  </a>
-  <div class="greeting-divider"></div>
-  <a class="tiktok-link" href="https://www.werenotreallystrangers.com" target="_blank">
-    werenotreallystrangers.com ↗
-  </a>
+  <div class="greeting-contact">
+    <a class="tiktok-link" href="https://www.tiktok.com/@werenotreallystrangers" target="_blank">
+      <svg class="tiktok-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+      @werenotreallystrangers
+    </a>
+    <a class="tiktok-link" href="https://discord.gg/cbdashxyKA" target="_blank">
+      Discord ↗
+    </a>
+    <a class="tiktok-link contact-link" href="mailto:WNRS@bellnova.com">
+      Contact us: WNRS@bellnova.com
+    </a>
+  </div>
 </div>
 
 <div class="page-body">
